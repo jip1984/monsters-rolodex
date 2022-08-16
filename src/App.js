@@ -1,13 +1,40 @@
+
 import { Component } from 'react'
 import './App.css';
 
 class App extends Component {
+constructor(){
+  super();
+
+  this.state = {
+    monsters:[
+       {
+        name: 'Linda'
+      },
+       {
+        name: 'Frank'
+      },
+       {
+        name: 'Jacky'
+      },
+      {
+        name: 'Andrei'
+      }
+    ]
+ 
+  }
+}
 
   render (){
   return (
     <div className="App">
-     <h1>Hello Jon</h1>
-     <button>Change Name</button>
+
+   {
+    this.state.monsters.map((monster) => {
+      return <h1>{monster.name}</h1>
+    })
+   }
+
     </div>
   );
 
